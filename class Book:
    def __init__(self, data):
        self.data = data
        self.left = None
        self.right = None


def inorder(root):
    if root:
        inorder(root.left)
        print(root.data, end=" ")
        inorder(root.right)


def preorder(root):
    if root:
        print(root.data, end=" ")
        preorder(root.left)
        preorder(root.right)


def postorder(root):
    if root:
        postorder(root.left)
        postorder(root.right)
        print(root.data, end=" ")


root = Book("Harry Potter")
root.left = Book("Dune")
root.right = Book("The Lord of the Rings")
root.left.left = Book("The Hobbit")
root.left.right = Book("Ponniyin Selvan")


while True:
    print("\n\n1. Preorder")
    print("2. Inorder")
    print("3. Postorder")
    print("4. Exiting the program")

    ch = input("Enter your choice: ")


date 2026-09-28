@@ -1,0 +1,43 @@
+class Book:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data, end=" ")
+        inorder(root.right)
+
+
+def preorder(root):
+    if root:
+        print(root.data, end=" ")
+        preorder(root.left)
+        preorder(root.right)
+
+
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end=" ")
+
+
+root = Book("Harry Potter")
+root.left = Book("Dune")
+root.right = Book("The Lord of the Rings")
+root.left.left = Book("The Hobbit")
+root.left.right = Book("Ponniyin Selvan")
+
+
+while True:
+    print("\n\n1. Preorder")
+    print("2. Inorder")
+    print("3. Postorder")
+    print("4. Exiting the program")
+
+    ch = input("Enter your choice: ")
+
